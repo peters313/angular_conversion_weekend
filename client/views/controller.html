@@ -1,11 +1,11 @@
 <div class="container" ng-controller="NewController">
 <h1>{{heading}}</h1>
     <form novalidate class="form-data">
-            Task:<input type="text" ng-model="note.data"/>
+            Task:<input type="text" ng-model="note.message"/>
             <input type="button" ng-click="getData()" value="Reset"/>
             <input type="submit" ng-click="updateMessage(note)" value="Create Task"/>
     </form>
-    <li class = 'col-md-3 col-sm-12' ng-repeat="message in message">
-        {{message}}
+    <li class = 'col-md-3 col-sm-12' ng-repeat="message in messages">
+        {{data.messages}}
     </li>
 </div>

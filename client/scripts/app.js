@@ -1,13 +1,13 @@
 var myApp = angular.module('myApp',[]);
 
 myApp.controller("NewController", ['$scope', '$http', function($scope, $http){
-    $scope.message = {};
+    $scope.messages = {};
     $scope.heading = "Task Creator: ";
 
     $scope.getData = function(){
         $http.get('/data').then(function(data){
-            $scope.message = data.data;
-            console.log("here is the scope.message", $scope.message);
+            $scope.messages = data.data;
+            console.log("here is the scope.message", $scope.messages);
             console.log(data);
         });
     };
