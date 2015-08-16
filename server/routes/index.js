@@ -7,7 +7,7 @@ var Info = mongoose.model('info', {message: String, flag: Boolean});
 
 router.get('/data', function(req, res, next){
     return Info.find({}).exec(function(err, info){
-        console.log("router.get");
+        //console.log("router.get");
         if(err) throw new Error(err);
         res.send(JSON.stringify(info));
     });
