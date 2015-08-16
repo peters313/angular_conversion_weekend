@@ -8,10 +8,21 @@
 }
 .panel {
     background-color: #31b0d5;
+    text-overflow: clip;
 }
 .form-data{
     text-align: center;
 }
 h1{
+    font-family: arial, sans-serif;
     text-align: center;
+}
+.jumbotron{
+    background-color: #ffffff;
+}
+.btn {
+    float: right;
+}
+body {
+    background-color: #42A5F5;
 }

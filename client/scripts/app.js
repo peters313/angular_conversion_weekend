@@ -15,6 +15,10 @@ myApp.controller("NewController", ['$scope', '$http', function($scope, $http){
         console.log(note);
         $http.post('/data', note).then($scope.getData());
     };
+    //$scope.customFilter = function(name) {
+    //    name.message = name.message.replace(/[0-9!@#$^&'%*()+-\/{}:<>?,.]/g, '');
+    //    return name
+    //};
 
     $scope.removeMessage = function(data){
         $http.delete('/data', data).then($scope.getData());
