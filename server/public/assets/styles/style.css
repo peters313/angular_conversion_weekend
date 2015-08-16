@@ -1,15 +1,17 @@
-body {
-    background-color: #080808;
-    color: #111111;
-}
-
 .well {
     background-color: #262626;
     color: #dddddd;
 }
-h1 {
-    color: #ffffff;
+
+.strike {
+    text-decoration: line-through;
 }
-li{
-    color: #ffffff;
+.panel {
+    background-color: #31b0d5;
+}
+.form-data{
+    text-align: center;
+}
+h1{
+    text-align: center;
 }

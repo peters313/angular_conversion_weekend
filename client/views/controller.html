@@ -1,11 +1,16 @@
-<div class="container" ng-controller="NewController">
-<h1>{{heading}}</h1>
-    <form novalidate class="form-data">
-            Task:<input type="text" ng-model="note.message"/>
-            <input type="button" ng-click="getData()" value="Reset"/>
-            <input type="submit" ng-click="updateMessage(note)" value="Create Task"/>
-    </form>
-    <li class = 'col-md-3 col-sm-12' ng-repeat="message in messages">
-        {{message.message}}
-    </li>
+<div class="jumbotron">
+    <div class="container" ng-controller="NewController">
+
+    <h1>{{heading}}</h1><br/>
+        <form novalidate class="form-data">
+                Task:<input type="text" ng-model="note.message"/>
+                <input type="button" ng-click="getData()" value="Reset"/>
+                <input type="submit" ng-click="updateMessage(note)" value="Create Task"/>
+        </form><br/>
+        <li class = "panel panel-primary col-md-3 col-md-offset-1 col-sm-12" ng-class="{strike: deleted}" ng-repeat="message in messages">
+            <input type="checkbox" ng-model="deleted"/>
+            {{message.message}}
+            <button class="btn btn-danger" type="button" value="Remove" ng-click="removeMessage()">Remove</button>
+        </li>
+    </div>
 </div>

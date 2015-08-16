@@ -2,7 +2,7 @@ var myApp = angular.module('myApp',[]);
 
 myApp.controller("NewController", ['$scope', '$http', function($scope, $http){
     $scope.messages = {};
-    $scope.heading = "Task Creator: ";
+    $scope.heading = "Task Generator: ";
 
     $scope.getData = function(){
         $http.get('/data').then(function(data){
@@ -14,6 +14,10 @@ myApp.controller("NewController", ['$scope', '$http', function($scope, $http){
     $scope.updateMessage = function(note){
         console.log(note);
         $http.post('/data', note).then($scope.getData());
+    };
+
+    $scope.removeMessage = function(data){
+        $http.delete('/data', data).then($scope.getData());
     };
 
 }]);

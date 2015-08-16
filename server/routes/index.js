@@ -22,9 +22,20 @@ router.post('/data', function(req, res, next){
     });
 });
 
+router.delete('/data', function(req, res, next){
+    Info.findByIdAndRemove(req.params.id, req.body, function(err, post){
+        if(err){
+            console.log("ERROR!!! : ", err);
+        }
+        res.json(post);
+    });
+});
+
 router.get('/*', function(req, res, next){
     var file = req.params[0] || '/assets/views/index.html';
     res.sendFile(path.join(__dirname, '../public/', file));
 });
+
+
 
 module.exports = router;
